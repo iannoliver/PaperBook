@@ -1,5 +1,5 @@
 //referenciar os controles: input nome, descricao e btncadastrar
-let idcat = ""
+let idcont = ""
 let celular = document.getElementById("celular")
 let residencial = document.getElementById("residencial")
 let email = document.getElementById("email")
@@ -8,7 +8,7 @@ let btncadastrar = document.getElementById("btncadastrar")
 //Realizar o cadastro ou a atualização quando o botão for pressionado
 btncadastrar.onclick = () => {
     if(btncadastrar.value == "Atualizar") {
-        fetch("http://10.26.44.57:5000/api/v1/contato/atualizar/"+idcat, {
+        fetch("http://10.26.44.57:5000/api/v1/contato/atualizar/"+idcont, {
             method:"PUT",
             headers:{
                 "accept":"application/json",
@@ -72,7 +72,7 @@ function exibirContato() {
 }
 
 function atualizar(id, cel, res, email){
-    idcat = id    
+    idcont = id    
     celular.value = cel
     residencial.value = res
     email.value = email
