@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(120deg, #602372d8, #28195eda);
+    /*background-color:  #292929;*/
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; 
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.conteiner{
+    background-color: rgba(202, 95, 8, 0.863);
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+main {
+    padding-top: auto;
+    padding: auto;
+}
