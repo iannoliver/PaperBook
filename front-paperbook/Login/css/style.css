@@ -1,0 +1,92 @@
+body {
+    background: url("/Login/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#struct {
+    background-color: #fff;
+    width: 80%;
+    height: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    display: flex;
+    border-radius: 10px;
+}
+
+#img {
+    flex: 1;
+}
+
+#img img {
+    width: 100%;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+}
+
+#form {
+    flex: 1;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#form img {
+    width: 250px;
+    height: 250px;
+    margin-top: 60px;
+}
+
+h2 {
+    font-family:'Lobster', cursive ;
+    font-size: 30pt;
+    color:#497c9b;;
+    margin-bottom: 100px;
+}
+
+input[type="text"],input[type="password"]{
+    width: 70%;
+    padding: 10px;
+    display: block;
+    margin: 5px auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 15pt;
+    border: 0px;
+    border-bottom: 2px solid #497c9b;
+    outline: none;
+}
+input[type="submit"] {
+    margin: 20px auto;
+    border: 0px;
+    background-color: midnightblue;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+    border-radius: 50px;
+    transition:  ease .8s;
+}
+
+input[type="submit"]:hover {
+    background-color: blueviolet;
+    color: black;
+}
+
+#form a{
+    width: 200px;
+    padding: 10px;
+    background-color: midnightblue;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    transition:  ease .8s;
+    border-radius: 50px;
+    
+}
+
+#form a:hover {
+    background-color: blueviolet;
+    color: black;
+}

@@ -8,15 +8,16 @@ let btncadastrar = document.getElementById("btncadastrar")
 //Realizar o cadastro ou a atualização quando o botão for pressionado
 btncadastrar.onclick = () => {
     if(btncadastrar.value == "Atualizar") {
-        fetch("http://10.26.44.57:5000/api/v1/contato/atualizar/"+idcont, {
+        fetch("http://localhost:5000/api/v1/contato/atualizar/"+idcont, {
             method:"PUT",
             headers:{
                 "accept":"application/json",
                 "content-type":"application/json"
             },
             body:JSON.stringify({
-                nomecategoria: nome.value,
-                descricaocategoria: descricao.value,
+                celular: celular.value,
+                residencial: residencial.value,
+                email: email.value 
             })
         })
         .then((response)=>response.json())
@@ -25,15 +26,16 @@ btncadastrar.onclick = () => {
         alert("O Contato foi atualizado. Atualize a página")
         window.location.reload()
     } else {
-        fetch("http://10.26.44.57:5000/api/v1/contato/cadastrar", {
+        fetch("http://locahost:5000/api/v1/contato/cadastrar", {
         method:"POST",
         headers:{
             "accept":"application/json",
             "content-type":"application/json"
         },
         body:JSON.stringify({
-            nomecategoria: nome.value,
-            descricaocategoria: descricao.value,
+            celular: celular.value,
+            residencial: residencial.value,
+            email: email.value
         })
     })
     .then((response)=>response.json())
@@ -47,7 +49,7 @@ btncadastrar.onclick = () => {
 // exibir as catecorias cadastradas
 function exibirContato() {
     let saida = ""
-    fetch("http://10.26.44.57:5000/api/v1/contato/listar")
+    fetch("http://localhost:5000/api/v1/contato/listar")
     .then((response)=>response.json())
     .then((dados) => {
         dados.map((itens,ix)=>{
@@ -71,11 +73,11 @@ function exibirContato() {
     }).catch((error)=>console.error("Erro na api "+error))
 }
 
-function atualizar(id, cel, res, email){
+function atualizar(id, cel, res, em){
     idcont = id    
     celular.value = cel
     residencial.value = res
-    email.value = email
+    email.value = em
 
     document.getElementById("btncadastrar").value = "Atualizar"
 
@@ -83,7 +85,7 @@ function atualizar(id, cel, res, email){
 }
 
 function apagar(id){
-    fetch("http://10.26.44.57:5000/api/v1/contato/apagar/"+id, {method:"DELETE"})
+    fetch("http://localhost:5000/api/v1/contato/apagar/"+id, {method:"DELETE"})
     .then((response)=>response.json())
     .then((dados) => {
         

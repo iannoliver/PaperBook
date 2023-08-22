@@ -21,8 +21,15 @@ btncadastrar.onclick = () => {
                 "content-type":"application/json"
             },
             body:JSON.stringify({
-                nomecategoria: nome.value,
-                descricaocategoria: descricao.value,
+                tipo: tipo.value,
+                logradouro: logradouro.value,
+                cep: cep.value,
+                numero: numero.value,
+                complemento: complemento.value,
+                referencia: referencia.value,
+                bairro: bairro.value,
+                cidade: cidade.value,
+                estado: estado.value,
             })
         })
         .then((response)=>response.json())
@@ -38,8 +45,15 @@ btncadastrar.onclick = () => {
             "content-type":"application/json"
         },
         body:JSON.stringify({
-            nomecategoria: nome.value,
-            descricaocategoria: descricao.value,
+            tipo: tipo.value,
+            logradouro: logradouro.value,
+            cep: cep.value,
+            numero: numero.value,
+            complemento: complemento.value,
+            referencia: referencia.value,
+            bairro: bairro.value,
+            cidade: cidade.value,
+            estado: estado.value,
         })
     })
     .then((response)=>response.json())
@@ -84,17 +98,17 @@ function exibirEnderecos() {
     }).catch((error)=>console.error("Erro na api "+error))
 }
 
-function atualizar(id, tipo, log, cep, num, comp, ref, bairro, cidade, estado){
+function atualizar(id, tip, log, c, num, comp, ref, bai, cida, est){
     idend = id    
-    tipo.value = tipo
+    tipo.value = tip
     logradouro.value = log
-    cep.value = cep
+    cep.value = c
     numero.value = num
     complemento.value = comp
     referencia.value = ref
-    bairro.value = bairro
-    cidade.value = cidade
-    estado.value = estado
+    bairro.value = bai
+    cidade.value = cida
+    estado.value = est
 
     document.getElementById("btncadastrar").value = "Atualizar"
 
